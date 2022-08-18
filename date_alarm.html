@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: #4d3517;
+    }
+
+    #lol {
+        visibility: hidden;
+    }
+
+    section {
+        background-color: rgb(6, 6, 102);
+        border-radius: 10px;
+        margin: auto;
+        align-content: center;
+        text-align: center;
+        justify-content: center;
+        width: fit-content;
+        font-weight: bold;
+        font-size: 45px;
+        color: aliceblue;
+        padding: 20px;
+    }
+
+    input {
+        width: 50px;
+        height: 50px;
+        width: 50px;
+        height: 50px;
+        font-size: 25px;
+        padding-left: 10px;
+        border-radius: 10px;
+        outline: none;
+        box-shadow: 5px 8px 56px -12px #2f64b9;
+        color: #ced0d1;
+        background-color:  #2f64b9;
+    }
+    button{
+        padding: 10px;
+        font-size: 20px;
+        letter-spacing: 2px;
+         border: none;
+         
+    }
+</style>
+
+<body>
+    <section>
+        <audio src="../classwork/alarm sound.wav" controls id="lol"></audio>
+        <br>
+        <div>Set an alarm</div>
+        <span id="hours"></span>
+        :
+        <span id="minutes"></span>
+        :
+        <span id="seconds"></span>
+        <br>
+        <div>
+            <input type="number" id="okay">
+            <input type="number" id="oka">
+            <input type="number" id="ok">
+            <br>
+            <button onclick="set()">SET</button>
+        </div>
+    </section>
+
+</body>
+<script>
+    let hours = document.getElementById("okay")
+    let minutes = document.getElementById("oka")
+    let seconds = document.getElementById("oka")
+
+    let hr = document.getElementById("hours")
+    let min = document.getElementById("minutes")
+    let sec = document.getElementById("seconds")
+
+    let audio = document.getElementById("lol")
+
+        let act = new Date()
+        let hrs = act.getHours()
+        let mins = act.getMinutes()
+        let secs = act.getSeconds()
+
+        hr.innerHTML = hrs
+        min.innerHTML = mins
+        sec.innerHTML = secs
+
+    function sw() {
+
+        let act = new Date()
+        let hrs = act.getHours()
+        let mins = act.getMinutes()
+        let secs = act.getSeconds()
+
+        hr.innerHTML = hrs
+        min.innerHTML = mins
+        sec.innerHTML = secs
+
+        if (hours.value == hrs && minutes.value == mins) {
+            audio.play()
+        }
+        
+    };
+
+    function set() {
+        interval = window.setInterval(sw, 1000)
+       
+    }
+</script>
+
+</html>
